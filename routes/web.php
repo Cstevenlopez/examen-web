@@ -17,6 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::resource('estudiantes','App\Http\Controllers\EstudianteController');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
+Route::resource('usuarios','App\Http\Controllers\UserController');
