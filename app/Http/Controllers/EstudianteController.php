@@ -87,7 +87,7 @@ class EstudianteController extends Controller
      */
     public function update(Request $request, $id)
     {
-      /*  $articulo = Articulo::find($id);
+     /* $articulo = Articulo::find($id);
         $articulo->codigo = $request->get('codigo');
         $articulo->descripcion = $request->get('descripcion');
         $articulo->cantidad = $request->get('cantidad');
@@ -95,12 +95,15 @@ class EstudianteController extends Controller
 
         $articulo->save();*/
 
-   /*     $codigo = $request->get('codigo');
-        $descripcion = $request->get('descripcion');
-        $cantidad = $request->get('cantidad');
-        $precio = $request->get('precio');
+        $DNI = $request->get('DNI');
+        $nombres = $request->get('nombres');
+        $apellidos = $request->get('apellidos');
+        $fechadenacimiento = $request->get('fechadenacimiento');
+        $localidad = $request->get('localidad');
+        $telefono = $request->get('telefono');
 
-        DB::update('update articulos set codigo = ?, descripcion = ?, cantidad = ?, precio = ? where id = ?', [$codigo, $descripcion, $cantidad, $precio, $id ]);*/ 
+        DB::update('update estudiantes set DNI = ?, nombres = ?, apellidos = ?, fechadenacimiento = ?, localidad = ?, telefono = ? where id = ?', [$DNI, $nombres, $apellidos, $fechadenacimiento, $localidad, $telefono, $id ]);
+        return redirect('/estudiantes');    
     }
 
     /**

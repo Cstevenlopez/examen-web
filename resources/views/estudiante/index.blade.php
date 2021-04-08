@@ -25,12 +25,6 @@
     <td>{{ $estudiante->fechadenacimiento }}</td>
     <td>{{ $estudiante->localidad }}</td>
     <td>{{ $estudiante->telefono }}</td>
-
-    <td>
-    <div class="btn-group" role="group" aria-label="Basic example">
-    <a href="/estudiantes/{{ $estudiante->DNI }}/create" class="btn btn-info">+</a>
-</div>
-    </td>
     <td>
     <form action="{{ route('estudiantes.destroy', $estudiante->id) }}" method="post">
     @csrf
